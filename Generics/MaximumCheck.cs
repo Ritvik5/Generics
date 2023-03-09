@@ -23,7 +23,7 @@ namespace Generics
             { 
                 return third;
             }
-            throw new Exception("first,second and third are same");
+            throw new Exception("first, second and third are same");
         }
 
         public float MaximumFloat(float first, float second, float third)
@@ -40,7 +40,30 @@ namespace Generics
             {
                 return third;
             }
-            throw new Exception("first , second and third are same");
+            throw new Exception("first, second and third are same");
+        }
+
+        public string MaximumString(string first, string second, string third)
+        {
+            if(first.CompareTo(second) > 0 && first.CompareTo(third) > 0 || 
+               first.CompareTo(second) >= 0 && first.CompareTo(third) > 0 ||
+               first.CompareTo(second) > 0 && first.CompareTo(third) >= 0) 
+            {
+                return first;
+            }
+            if(second.CompareTo(first) > 0 && second.CompareTo(third) > 0 ||
+               second.CompareTo(first) >= 0 && second.CompareTo(third) > 0 ||
+               second.CompareTo(first) > 0 && second.CompareTo(third) >= 0)
+            {
+                return second;
+            }
+            if(third.CompareTo(first) > 0 && third.CompareTo(second) > 0 ||
+               third.CompareTo(first) >= 0 && third.CompareTo(second) > 0 ||
+               third.CompareTo(first) > 0 && third.CompareTo(second) >= 0)
+            {
+                return third;
+            }
+            throw new Exception("first, second and third are same");
         }
     }
 }
